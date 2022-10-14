@@ -2,7 +2,8 @@
 
 const fsp = require('node:fs').promises
 const path = require('node:path')
-const server = require('./ws.js')
+const ws = require('./ws.js')
+const http = require('./http.js')
 const staticServer = require('./static.js')
 const load = require('./load.js')
 const db = require('./db.js')
@@ -26,6 +27,15 @@ const routing = {}
     routing[serviceName] = await load(filePath, sandbox)
   }
 
-  staticServer('./static', config.server.port.static)
-  server(routing, config.server.port.api)
+  switch (config.transport) {
+    case 'http':
+      staticServer('./static', config.server.port.static)
+      break
+    case 'ws':
+      ws(routing, config.server.port.api)
+      staticServer('./static', config.server.port.static)
+      break
+    default:
+      throw new Error('server not selected')
+  }
 })()

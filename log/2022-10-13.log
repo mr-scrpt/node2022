@@ -1,0 +1,109 @@
+2022-10-13T10:23:47	init
+2022-10-13T10:23:47	API on port 8001
+2022-10-13T11:59:37	init
+2022-10-13T11:59:37	API on port 8001
+2022-10-13T11:59:49	connection
+2022-10-13T11:59:49	::ffff:127.0.0.1 user.read(3)
+2022-10-13T11:59:49	; 
+2022-10-13T12:04:05	init
+2022-10-13T12:04:05	API on port 8001
+2022-10-13T12:04:36	connection
+2022-10-13T12:04:36	::ffff:127.0.0.1 user.read(3)
+2022-10-13T12:04:36	; 
+2022-10-13T12:09:16	init
+2022-10-13T12:09:16	API on port 8001
+2022-10-13T12:10:26	connection
+2022-10-13T12:10:26	::ffff:127.0.0.1 user.read(3)
+2022-10-13T12:10:26	in user 3
+2022-10-13T12:10:26	; 
+2022-10-13T12:12:17	::ffff:127.0.0.1 user.read(1)
+2022-10-13T12:12:17	in user 1
+2022-10-13T12:12:17	; 
+2022-10-13T12:12:36	::ffff:127.0.0.1 user.read(2)
+2022-10-13T12:12:36	in user 2
+2022-10-13T12:12:36	; 
+2022-10-13T12:12:40	::ffff:127.0.0.1 user.read(3)
+2022-10-13T12:12:40	in user 3
+2022-10-13T12:12:40	; 
+2022-10-13T12:12:44	::ffff:127.0.0.1 user.read(1)
+2022-10-13T12:12:44	in user 1
+2022-10-13T12:12:44	; 
+2022-10-13T12:13:13	::ffff:127.0.0.1 user.read(1)
+2022-10-13T12:13:13	in user 1
+2022-10-13T12:13:13	; 
+2022-10-13T12:14:37	init
+2022-10-13T12:14:37	API on port 8001
+2022-10-13T12:14:53	connection
+2022-10-13T12:14:53	::ffff:127.0.0.1 user.read(3)
+2022-10-13T12:14:53	here
+2022-10-13T12:14:53	in user 3
+2022-10-13T12:14:53	; 
+2022-10-13T12:16:21	init
+2022-10-13T12:16:21	API on port 8001
+2022-10-13T12:16:22	connection
+2022-10-13T12:16:22	::ffff:127.0.0.1 user.read(3)
+2022-10-13T12:16:22	args [ 3 ]
+2022-10-13T12:16:22	in user 3
+2022-10-13T12:16:22	; 
+2022-10-13T12:16:28	::ffff:127.0.0.1 user.read(3)
+2022-10-13T12:16:28	args [ 3 ]
+2022-10-13T12:16:28	in user 3
+2022-10-13T12:16:28	; 
+2022-10-13T12:16:36	::ffff:127.0.0.1 user.read(2)
+2022-10-13T12:16:36	args [ 2 ]
+2022-10-13T12:16:36	in user 2
+2022-10-13T12:16:36	; 
+2022-10-13T12:17:36	init
+2022-10-13T12:17:36	API on port 8001
+2022-10-13T12:17:39	connection
+2022-10-13T12:17:39	[Function: read]
+2022-10-13T12:17:39	::ffff:127.0.0.1 user.read(3)
+2022-10-13T12:17:39	args [ 3 ]
+2022-10-13T12:17:39	in user 3
+2022-10-13T12:17:39	; 
+2022-10-13T12:18:35	init
+2022-10-13T12:18:35	API on port 8001
+2022-10-13T12:18:38	connection
+2022-10-13T12:18:38	{ handler: [Function: read] }
+2022-10-13T12:18:38	::ffff:127.0.0.1 user.read(3)
+2022-10-13T12:18:38	args [ 3 ]
+2022-10-13T12:18:38	in user 3
+2022-10-13T12:18:38	; 
+2022-10-13T12:19:32	init
+2022-10-13T12:19:32	API on port 8001
+2022-10-13T12:19:34	connection
+2022-10-13T12:19:34	{ handler: [Function: read] }
+2022-10-13T12:19:34	::ffff:127.0.0.1 user.read(3)
+2022-10-13T12:19:34	args [ 3 ]
+2022-10-13T12:19:34	in user 3
+2022-10-13T12:19:34	; 
+2022-10-13T12:22:00	{ handler: [Function: find] }
+2022-10-13T12:22:00	::ffff:127.0.0.1 country.find(1)
+2022-10-13T12:22:00	args [ 1 ]
+2022-10-13T12:22:00	; 
+2022-10-13T12:22:14	{ handler: [Function: find] }
+2022-10-13T12:22:14	::ffff:127.0.0.1 country.find()
+2022-10-13T12:22:14	args []
+2022-10-13T12:22:14	; 
+2022-10-13T13:50:56	init
+2022-10-13T13:50:56	API on port 8001
+2022-10-13T14:53:35	init
+2022-10-13T14:53:35	API on port 8001
+2022-10-13T14:53:38	connection
+2022-10-13T14:53:39	{ handler: [Function: read] }
+2022-10-13T14:53:39	::1 user.read(3)
+2022-10-13T14:53:39	args [ 3 ]
+2022-10-13T14:53:39	in user 3
+2022-10-13T14:53:39	{; result: Result {; command: 'SELECT',; rowCount: 1,; oid: null,; rows: [ [Object] ],; fields: [ [Field], [Field] ],; _parsers: [ [Function: parseBigInteger], [Function: noParse] ],; _types: TypeOverrides { _types: [Object], text: {}, binary: {} },; RowCtor: null,; rowAsArray: false; }; }
+2022-10-13T14:54:02	{ handler: [Function: read] }
+2022-10-13T14:54:02	::1 user.read(2)
+2022-10-13T14:54:02	args [ 2 ]
+2022-10-13T14:54:02	in user 2
+2022-10-13T14:54:02	{; result: Result {; command: 'SELECT',; rowCount: 1,; oid: null,; rows: [ [Object] ],; fields: [ [Field], [Field] ],; _parsers: [ [Function: parseBigInteger], [Function: noParse] ],; _types: TypeOverrides { _types: [Object], text: {}, binary: {} },; RowCtor: null,; rowAsArray: false; }; }
+2022-10-13T14:54:15	{ handler: [Function: read] }
+2022-10-13T14:54:15	::1 user.read(2)
+2022-10-13T14:54:15	args [ 2 ]
+2022-10-13T14:54:15	in user 2
+2022-10-13T14:54:15	{; result: Result {; command: 'SELECT',; rowCount: 1,; oid: null,; rows: [ [Object] ],; fields: [ [Field], [Field] ],; _parsers: [ [Function: parseBigInteger], [Function: noParse] ],; _types: TypeOverrides { _types: [Object], text: {}, binary: {} },; RowCtor: null,; rowAsArray: false; }; }
+2022-10-13T15:07:55	in user 1
+2022-10-13T15:08:00	in user 2
