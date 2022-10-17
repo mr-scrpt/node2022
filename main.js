@@ -29,6 +29,7 @@ const routing = {}
 
   switch (config.transport) {
     case 'http':
+      http(routing, config.server.port.api)
       staticServer('./static', config.server.port.static)
       break
     case 'ws':

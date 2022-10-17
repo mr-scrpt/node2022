@@ -3,12 +3,15 @@
 const http = require('node:http')
 const path = require('node:path')
 const fs = require('node:fs')
+const checkUrlApi = require('./helpers/checkUrlApi')
 
 module.exports = (root, port) => {
   http
     .createServer(async (req, res) => {
-      console.log('static server start')
       const url = req.url === '/' ? '/index.html' : req.url
+      if (checkUrlApi(url)) {
+        return
+      }
       const filePath = path.join(root, url)
       try {
         const data = await fs.promises.readFile(filePath)

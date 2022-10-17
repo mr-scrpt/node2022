@@ -1,6 +1,7 @@
 'use strict'
 
 const http = require('node:http')
+const checkUrlApi = require('./helpers/checkUrlApi')
 
 const receiveArgs = async (req) => {
   const buffers = []
@@ -10,20 +11,26 @@ const receiveArgs = async (req) => {
 }
 
 module.exports = (routing, port) => {
-  console.log('module')
   http
     .createServer(async (req, res) => {
-      console.log('http server start')
-      console.log('start server log')
+      res.setHeader('Access-Control-Allow-Origin', '*')
+      res.setHeader(
+        'Access-Control-Allow-Headers',
+        'origin, content-type, accept'
+      )
       const { url, socket } = req
 
-      const [name, method, id] = url.substring(1).split('/')
-      console.dir({ routing })
-      console.dir({ name })
+      if (!checkUrlApi(url)) {
+        return
+      }
+
+      const [_, name, method, id] = url.substring(1).split('/')
       const entity = routing[name]
+      console.log(entity, 'entity')
       if (!entity) return res.end('Not found')
       const handler = entity[method]
       if (!handler) return res.end('Not found')
+      console.log('find handler')
       const src = handler.toString()
       const signature = src.substring(0, src.indexOf(')'))
       const args = []
@@ -31,6 +38,8 @@ module.exports = (routing, port) => {
       if (signature.includes('{')) args.push(await receiveArgs(req))
       console.log(`${socket.remoteAddress} ${method} ${url}`)
       const result = await handler(...args)
+      console.dir({ result: result.rows })
+      console.log(result.rows)
       res.end(JSON.stringify(result.rows))
     })
     .listen(port)
