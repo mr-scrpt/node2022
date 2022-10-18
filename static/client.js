@@ -2,26 +2,20 @@
 
 const socket = new WebSocket('ws://localhost:8001/')
 
-const scaffold = (structure, url = null, transport) => {
+const scaffold = (url, structure) => {
   const api = {}
   const services = Object.keys(structure)
-  console.log('start', transport)
+  const protocol = url.substring(0, url.indexOf(':'))
   for (const serviceName of services) {
     api[serviceName] = {}
     const service = structure[serviceName]
-    console.log('service', service)
     const methods = Object.keys(service)
-    console.log('method', methods)
     for (const methodName of methods) {
       api[serviceName][methodName] = (...args) =>
         new Promise((resolve, reject) => {
-          console.log('in Promise')
-
-          console.log('serviceName', serviceName)
-          console.log('methodName', methodName)
-          switch (transport) {
+          switch (protocol) {
             case 'http':
-              console.log('in http client')
+              console.log('HttpSocket protocol', protocol)
               fetch(`${url}/api/${serviceName}/${methodName}/${args}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'aplication/json' },
@@ -34,7 +28,8 @@ const scaffold = (structure, url = null, transport) => {
               })
               break
             case 'ws':
-              console.log('in ws')
+              console.log('WebSocket protocol', protocol)
+              console.log('state', socket.readyState)
               socket.send(
                 JSON.stringify({ name: serviceName, method: methodName, args })
               )
@@ -44,8 +39,7 @@ const scaffold = (structure, url = null, transport) => {
               }
               break
             default:
-              console.log('in default')
-              reject(new Error('transport not selected'))
+              reject(new Error('protocol not selected'))
           }
         })
     }
@@ -53,6 +47,13 @@ const scaffold = (structure, url = null, transport) => {
   return api
 }
 
+const client = {
+  url: {
+    ws: 'ws://localhost',
+    http: 'http://localhost',
+  },
+  port: 8001,
+}
 const structura = {
   user: {
     create: ['record'],
@@ -67,4 +68,4 @@ const structura = {
     find: ['mask'],
   },
 }
-const api = scaffold(structura, 'http://localhost:8001', 'http')
+const api = scaffold(`${client.url.ws}:${client.port}`, structura)

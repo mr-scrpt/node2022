@@ -9,6 +9,7 @@ module.exports = (routing, port) => {
     console.log('ws server start')
     const ip = req.socket.remoteAddress
     connection.on('message', async (message) => {
+      console.log('keep message')
       const obj = JSON.parse(message)
       const { name, method, args = [] } = obj
       const entity = routing[name]

@@ -26,11 +26,9 @@ module.exports = (routing, port) => {
 
       const [_, name, method, id] = url.substring(1).split('/')
       const entity = routing[name]
-      console.log(entity, 'entity')
       if (!entity) return res.end('Not found')
       const handler = entity[method]
       if (!handler) return res.end('Not found')
-      console.log('find handler')
       const src = handler.toString()
       const signature = src.substring(0, src.indexOf(')'))
       const args = []
@@ -38,8 +36,6 @@ module.exports = (routing, port) => {
       if (signature.includes('{')) args.push(await receiveArgs(req))
       console.log(`${socket.remoteAddress} ${method} ${url}`)
       const result = await handler(...args)
-      console.dir({ result: result.rows })
-      console.log(result.rows)
       res.end(JSON.stringify(result.rows))
     })
     .listen(port)
